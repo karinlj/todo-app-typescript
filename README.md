@@ -1,8 +1,8 @@
-# Todo app React,Typescript,styled components
+# Todo app React, Typescript, styled components
 
 ### Description
 
-Todo app with React,Typescript and styled components.
+Todo app with React, Typescript and styled components.
 
 ![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
 
@@ -17,6 +17,8 @@ To clone
 `git clone https://github.com/karinlj/todo-app-typescript.git`
 
 To install
+
+`cd todo-app-typescript`
 
 `npm install`
 
