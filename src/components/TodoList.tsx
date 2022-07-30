@@ -1,5 +1,5 @@
 import { ITask } from "../Interfaces";
-import * as Styled from "../style";
+import { StyledListItem, StyledDeleteButton } from "./styles/style";
 
 type Props = {
   todos: ITask[];
@@ -14,7 +14,7 @@ const TodoList = ({ todos, togglecomplete, deleteFromList }: Props) => {
       <ul>
         {todos.map((item) => {
           return (
-            <Styled.ListItem key={item.id}>
+            <StyledListItem key={item.id}>
               <div>
                 {/* onChange & checked */}
                 <input
@@ -23,7 +23,7 @@ const TodoList = ({ todos, togglecomplete, deleteFromList }: Props) => {
                   checked={item.isCompleted}
                 />
                 <div
-                  className="list-item-container"
+                  className="list-item-inner-container"
                   style={{
                     textDecoration: item.isCompleted ? "line-through" : "none",
                   }}
@@ -32,10 +32,10 @@ const TodoList = ({ todos, togglecomplete, deleteFromList }: Props) => {
                   <span> {item.deadline} days</span>
                 </div>
               </div>
-              <Styled.DeleteButton onClick={() => deleteFromList(item.id)}>
+              <StyledDeleteButton onClick={() => deleteFromList(item.id)}>
                 x
-              </Styled.DeleteButton>
-            </Styled.ListItem>
+              </StyledDeleteButton>
+            </StyledListItem>
           );
         })}
       </ul>

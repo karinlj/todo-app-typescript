@@ -1,8 +1,12 @@
 import { useState } from "react";
-import * as Styled from "./style";
 import { ITask } from "./Interfaces";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
+import { GlobalStyles } from "./components/styles/Global";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./components/styles/style";
 
 function App() {
   const [todos, setTodos] = useState<ITask[]>([
@@ -35,13 +39,10 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Styled.Header className="header">
-        <h1>
-          Todo App React with <br></br>TypeScript and styled components
-        </h1>
-        <p>My simple todo list</p>
-      </Styled.Header>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+
+      <Header />
 
       <main>
         <AddTodo addToList={addToList} />
@@ -51,7 +52,8 @@ function App() {
           deleteFromList={deleteFromList}
         />
       </main>
-    </div>
+      <Footer />
+    </ThemeProvider>
   );
 }
 

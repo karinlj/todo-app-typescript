@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ITask } from "../Interfaces";
-import * as Styled from "../style";
+import { StyledInput, StyledAddButton } from "./styles/style";
+//import * as Styled from "./styles/style";
 
 type Props = {
   addToList(newTodo: ITask): void;
@@ -41,7 +42,7 @@ const AddTodo = ({ addToList }: Props) => {
         {" "}
         New Todo
         {/* onChange & value */}
-        <Styled.Input
+        <StyledInput
           type="text"
           id="title"
           onChange={handleChange}
@@ -51,7 +52,7 @@ const AddTodo = ({ addToList }: Props) => {
       </label>
       <label>
         Deadline
-        <Styled.Input
+        <StyledInput
           type="number"
           id="deadline"
           onChange={handleChange}
@@ -59,7 +60,7 @@ const AddTodo = ({ addToList }: Props) => {
           placeholder="New Todo"
         />
       </label>
-      <Styled.AddButton>Add Todo</Styled.AddButton>
+      <StyledAddButton>Add Todo</StyledAddButton>
     </form>
   );
 };
